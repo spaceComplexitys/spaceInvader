@@ -1,0 +1,17 @@
+5. Use Rosetta 2 as a Last Resort
+
+If you cannot resolve the architecture issue, you can compile and run your program under Rosetta 2, which emulates the x86_64 architecture on M1 Macs:
+1.	Install x86_64 versions of the libraries:
+
+
+arch -x86_64 brew install glfw glew
+
+
+2.	Compile for x86_64:
+
+clang++ -std=c++11 -arch x86_64 -o main main.cpp -lglfw -lGLEW -framework OpenGL
+
+3. Run the app under Rosetta 2
+
+arch -x86_64 ./main
+
